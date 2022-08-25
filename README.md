@@ -39,7 +39,6 @@ yarn add blurhash-from-url
 import blurhashFromURL from "blurhash-from-url";
 
 async function getBlurhash() {
-  console.log("Running test...");
   const output = await blurhashFromURL("https://i.imgur.com/NhfEdg2.png");
   console.log(output);
 }

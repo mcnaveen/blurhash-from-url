@@ -1,6 +1,6 @@
 {
   "name": "blurhash-from-url",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple utility to generate blurhash from Image URL",
   "main": "index.js",
   "type": "module",
