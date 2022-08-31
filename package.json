@@ -4,6 +4,7 @@
   "description": "Simple utility to generate blurhash from Image URL",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.esm.js",
+  "umd": "dist/umd/index.js",
   "files": [
     "dist"
   ],
@@ -11,7 +12,9 @@
   "scripts": {
     "build": "rollup -c",
     "test": "yarn build && node ./test/index.js",
-    "watch": "rollup -cw"
+    "watch": "rollup -cw",
+    "commit": "gacp",
+    "clean:dist": "npm exec -- rimraf ./dist"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,6 +24,8 @@
   },
   "devDependencies": {
     "@types/sharp": "^0.30.5",
+    "gacp": "^3.0.3",
+    "rimraf": "^3.0.2",
     "rollup": "^2.78.1",
     "rollup-plugin-typescript2": "^0.33.0",
     "typescript": "^4.8.2"
@@ -44,5 +49,11 @@
     "sharp",
     "plaiceholder",
     "blurhash-from-url"
-  ]
+  ],
+  "gacp": {
+    "add": false,
+    "push": false,
+    "emoji": "emoji",
+    "editor": false
+  }
 }
