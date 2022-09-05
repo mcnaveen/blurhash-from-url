@@ -1,4 +1,4 @@
-import get from "axios";
+import fetch from "node-fetch";
 import { encode, decode } from "blurhash";
 import sharp from 'sharp';
 
@@ -10,10 +10,9 @@ export interface IOutput {
 }
 
 export const blurhashFromURL = async (url: string) => {
-    const image = await get(url, {
-        responseType: "arraybuffer",
-    });
-    const returnedBuffer = Buffer.from(image.data);
+    const response = await fetch(url);
+    const arrayBuffer = await response.arrayBuffer();
+    const returnedBuffer = Buffer.from(arrayBuffer);
 
     const { data, info } = await sharp(returnedBuffer)
         .ensureAlpha()

@@ -4,10 +4,11 @@
     "moduleResolution": "node",
     "declaration": true,
     "declarationDir": "./dist",
-    "module": "es6",
+    "module": "ESNext",
     "noImplicitAny": true,
     "outDir": "./dist",
-    "target": "es5"
+    "target": "ESNext",
+    "sourceMap": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
