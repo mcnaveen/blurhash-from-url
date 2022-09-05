@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "blurhash": "^1.1.5",
-    "node-fetch": "2.6.6",
+    "node-fetch": "2.6.7",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
