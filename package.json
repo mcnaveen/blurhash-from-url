@@ -1,10 +1,9 @@
 {
   "name": "blurhash-from-url",
-  "version": "0.0.4",
+  "version": "0.0.5-beta.0",
   "description": "Simple utility to generate blurhash from Image URL",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.esm.js",
-  "umd": "dist/umd/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
@@ -18,15 +17,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.27.2",
     "blurhash": "^1.1.5",
+    "node-fetch": "2.6.6",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
     "@types/sharp": "^0.30.5",
     "gacp": "^3.0.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.78.1",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.33.0",
     "typescript": "^4.8.2"
   },
