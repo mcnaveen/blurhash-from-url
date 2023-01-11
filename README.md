@@ -72,6 +72,19 @@ getBlurhash();
 }
 ```
 
+### Optional Size Parameter
+
+By default, the image is resized to 32x32. You can pass the size as an optional parameter.
+
+```javascript
+async function getBlurhash() {
+  const output = await blurhashFromURL("https://i.imgur.com/NhfEdg2.png", {
+    size: 64,
+  });
+  console.log(output);
+}
+```
+
 ---
 
 #### :green_heart: Message

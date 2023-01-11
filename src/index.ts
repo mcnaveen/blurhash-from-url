@@ -1,25 +1,42 @@
 import fetch from "node-fetch";
 import { encode, decode } from "blurhash";
 import sharp from 'sharp';
+import sizeOf from "image-size";
 
+export interface IOptions {
+    size?: number;
+}
+
+export interface IInput {
+    url: string;
+    options?: IOptions;
+}
 export interface IOutput {
     encoded: string;
-    decoded: Uint8ClampedArray;
     width: number;
     height: number;
 }
 
-export const blurhashFromURL = async (url: string) => {
+export const blurhashFromURL = async (url: string, options: IOptions = {}) => {
+    const { size = 32 } = options;
+
     const response = await fetch(url);
     const arrayBuffer = await response.arrayBuffer();
     const returnedBuffer = Buffer.from(arrayBuffer);
 
-    const { data, info } = await sharp(returnedBuffer)
+    const { width, height, } = sizeOf(returnedBuffer);
+
+    const { info, data } = await sharp(returnedBuffer)
+        .resize(size, size, {
+            fit: "inside",
+        })
         .ensureAlpha()
         .raw()
         .toBuffer({
             resolveWithObject: true,
         });
+
+
     const encoded = encode(
         new Uint8ClampedArray(data),
         info.width,
@@ -27,13 +44,11 @@ export const blurhashFromURL = async (url: string) => {
         4,
         4
     );
-    const decoded = decode(encoded, info.width, info.height);
 
     const output: IOutput = {
-        encoded: encoded,
-        decoded: decoded,
-        width: info.width,
-        height: info.height,
+        encoded,
+        width,
+        height,
     };
 
     return output;
