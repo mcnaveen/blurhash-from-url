@@ -4,7 +4,6 @@ const { blurhashFromURL } = require("../dist/index.js");
 async function getRemoteBlurhash() {
   const output = await blurhashFromURL("https://i.imgur.com/NhfEdg2.png", {
     size: 32,
-    offline: true,
   });
   console.log("\n 🪄 Remote Image Blurhash\n");
   console.log(output);
