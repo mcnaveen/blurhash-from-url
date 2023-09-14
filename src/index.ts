@@ -1,5 +1,4 @@
 import fetch from "node-fetch";
-import fs from "fs";
 import { encode } from "blurhash";
 import sharp from 'sharp';
 import sizeOf from "image-size";
@@ -42,6 +41,7 @@ export const blurhashFromURL = async (source: string, options: IOptions = {}): P
     let width, height, returnedBuffer;
 
     if (offline) {
+        const fs = await import("fs");
         const { width: localWidth, height: localHeight } = sizeOf(source);
         width = localWidth;
         height = localHeight;
