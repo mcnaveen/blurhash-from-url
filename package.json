@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/node-fetch": "^2.6.2",
-    "@types/sharp": "^0.30.5",
+    "@types/sharp": "^0.32.0",
     "gacp": "^3.0.3",
     "rimraf": "^3.0.2",
     "rollup": "^2.78.1",
