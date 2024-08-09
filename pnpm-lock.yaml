@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       blurhash:
-        specifier: ^1.1.5
-        version: 1.1.5
+        specifier: ^2.0.0
+        version: 2.0.5
       image-size:
         specifier: ^1.0.2
         version: 1.1.1
@@ -162,8 +162,8 @@ packages:
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
 
-  blurhash@1.1.5:
-    resolution: {integrity: sha512-a+LO3A2DfxTaTztsmkbLYmUzUeApi0LZuKalwbNmqAHR6HhJGMt1qSV/R3wc+w4DL28holjqO3Bg74aUGavGjg==}
+  blurhash@2.0.5:
+    resolution: {integrity: sha512-cRygWd7kGBQO3VEhPiTgq4Wc43ctsM+o46urrmPOiuAe+07fzlSB9OJVdpgDL0jPqXUVQ9ht7aq7kxOeJHRK+w==}
 
   boxen@5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
@@ -1101,7 +1101,7 @@ snapshots:
       inherits: 2.0.4
       readable-stream: 3.6.2
 
-  blurhash@1.1.5: {}
+  blurhash@2.0.5: {}
 
   boxen@5.1.2:
     dependencies:
