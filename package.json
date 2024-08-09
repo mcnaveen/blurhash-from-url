@@ -19,7 +19,7 @@
   "dependencies": {
     "blurhash": "^1.1.5",
     "image-size": "^1.0.2",
-    "node-fetch": "2.6.7",
+    "node-fetch": "3.3.2",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
