@@ -21,6 +21,9 @@ importers:
         specifier: ^0.30.7
         version: 0.30.7
     devDependencies:
+      '@rollup/plugin-terser':
+        specifier: ^0.1.0
+        version: 0.1.0(rollup@2.79.1)
       '@types/node-fetch':
         specifier: ^2.6.2
         version: 2.6.11
@@ -36,9 +39,6 @@ importers:
       rollup:
         specifier: ^2.78.1
         version: 2.79.1
-      rollup-plugin-terser:
-        specifier: ^7.0.2
-        version: 7.0.2(rollup@2.79.1)
       rollup-plugin-typescript2:
         specifier: ^0.34.0
         version: 0.34.1(rollup@2.79.1)(typescript@4.9.5)
@@ -96,6 +96,15 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@rollup/plugin-terser@0.1.0':
+    resolution: {integrity: sha512-N2KK+qUfHX2hBzVzM41UWGLrEmcjVC37spC8R3c9mt3oEDFKh3N2e12/lLp9aVSt86veR0TQiCNQXrm8C6aiUQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.x || ^3.x
+    peerDependenciesMeta:
+      rollup:
+        optional: true
 
   '@rollup/pluginutils@4.2.1':
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
@@ -509,10 +518,6 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  jest-worker@26.6.2:
-    resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
-    engines: {node: '>= 10.13.0'}
-
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -713,9 +718,6 @@ packages:
   queue@6.0.2:
     resolution: {integrity: sha512-iHZWu+q3IdFZFX36ro/lKBkSvfkztY5Y7HMiPlOUjhupPcG2JMfst2KKEpu5XndviX/3UhFbRngUPNKtgvtZiA==}
 
-  randombytes@2.1.0:
-    resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
-
   rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -761,12 +763,6 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rollup-plugin-terser@7.0.2:
-    resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
-    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
-    peerDependencies:
-      rollup: ^2.0.0
-
   rollup-plugin-typescript2@0.34.1:
     resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
@@ -796,9 +792,6 @@ packages:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
     hasBin: true
-
-  serialize-javascript@4.0.0:
-    resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
 
   sharp@0.30.7:
     resolution: {integrity: sha512-G+MY2YW33jgflKPTXXptVO28HvNOo9G3j0MybYAHeEmby+QuD2U98dT6ueht9cv/XDqZspSpIhoSW+BAKJ7Hig==}
@@ -1033,6 +1026,12 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@rollup/plugin-terser@0.1.0(rollup@2.79.1)':
+    dependencies:
+      terser: 5.31.5
+    optionalDependencies:
+      rollup: 2.79.1
 
   '@rollup/pluginutils@4.2.1':
     dependencies:
@@ -1459,12 +1458,6 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  jest-worker@26.6.2:
-    dependencies:
-      '@types/node': 22.2.0
-      merge-stream: 2.0.0
-      supports-color: 7.2.0
-
   js-tokens@4.0.0: {}
 
   json-buffer@3.0.0: {}
@@ -1644,10 +1637,6 @@ snapshots:
     dependencies:
       inherits: 2.0.4
 
-  randombytes@2.1.0:
-    dependencies:
-      safe-buffer: 5.2.1
-
   rc@1.2.8:
     dependencies:
       deep-extend: 0.6.0
@@ -1689,14 +1678,6 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rollup-plugin-terser@7.0.2(rollup@2.79.1):
-    dependencies:
-      '@babel/code-frame': 7.24.7
-      jest-worker: 26.6.2
-      rollup: 2.79.1
-      serialize-javascript: 4.0.0
-      terser: 5.31.5
-
   rollup-plugin-typescript2@0.34.1(rollup@2.79.1)(typescript@4.9.5):
     dependencies:
       '@rollup/pluginutils': 4.2.1
@@ -1722,10 +1703,6 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.6.3: {}
-
-  serialize-javascript@4.0.0:
-    dependencies:
-      randombytes: 2.1.0
 
   sharp@0.30.7:
     dependencies:
