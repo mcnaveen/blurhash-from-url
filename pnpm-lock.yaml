@@ -25,8 +25,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.11
       '@types/sharp':
-        specifier: ^0.30.5
-        version: 0.30.5
+        specifier: ^0.32.0
+        version: 0.32.0
       gacp:
         specifier: ^3.0.3
         version: 3.0.3
@@ -124,8 +124,9 @@ packages:
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
 
-  '@types/sharp@0.30.5':
-    resolution: {integrity: sha512-EhO29617AIBqxoVtpd1qdBanWpspk/kD2B6qTFRJ31Q23Rdf+DNU1xlHSwtqvwq1vgOqBwq1i38SX+HGCymIQg==}
+  '@types/sharp@0.32.0':
+    resolution: {integrity: sha512-OOi3kL+FZDnPhVzsfD37J88FNeZh6gQsGcLc95NbeURRGvmSjeXiDcyWzF2o3yh/gQAUn2uhh/e+CPCa5nwAxw==}
+    deprecated: This is a stub types definition. sharp provides its own type definitions, so you do not need this installed.
 
   '@vivaxy/git@4.2.1':
     resolution: {integrity: sha512-Gpnne7sk3oTd0fyw1J3clVX2ZBkJjNRduccDbOcgYv31M35nBzUHSzQ56eFiJsOTNfdVadL2bo0ICw5oilGfEA==}
@@ -1064,9 +1065,9 @@ snapshots:
     dependencies:
       '@types/node': 22.2.0
 
-  '@types/sharp@0.30.5':
+  '@types/sharp@0.32.0':
     dependencies:
-      '@types/node': 22.2.0
+      sharp: 0.30.7
 
   '@vivaxy/git@4.2.1':
     dependencies:
